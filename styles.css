@@ -42,13 +42,16 @@ nav a {
   text-transform: lowercase;
 }
 nav a:hover{
-    background-color: #c5c5c5;
-    color:black;
+    background-color: #FFFF00;
+    color: black;
+    text-shadow: none;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.7);
+    transition: all 0.3s ease;
 }
 
 .intro {
   text-align: center;
-  margin: 40px 0;
+  margin-top: 40px 0;
   border-bottom: 2px solid #444;
   
 }
@@ -61,7 +64,7 @@ nav a:hover{
   font-size: 1.5em;
 }
 .bio {
-  
+  padding: 0;
   margin: 0 auto 60px;
   margin-bottom: 0;
   font-size: 1.5em;
@@ -146,8 +149,9 @@ nav a:hover{
 }
 
 .card a:hover {
-  background: white;
-  color: rgb(0, 0, 0);
+  background: #FFFF00;
+  color: black;
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
 }
 
 .card a:hover::before {
@@ -251,4 +255,131 @@ footer {
   border-top: 1px solid #333;
   padding-top: 20px;
   font-size: 0.9em;
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.skill-group {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 1 300px;
+  padding: 1.25rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.skill-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.skill-content h4 {
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.skill-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Skill list styling */
+.skill-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.skill-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem; /* Reduced from 0.3rem */
+  line-height: 1.2; /* Further reduced line height */
+  padding: 0; /* Remove any padding */
+  white-space: nowrap; /* Keep list items on one line */
+}
+
+.skill-list li span {
+  display: inline;
+}
+
+.skill-list li i {
+  color: #ffffff; /* Changed from #4a9bff to white */
+  margin-right: 0.3rem; /* Reduced from 0.5rem */
+  font-size: 0.8rem;
+}
+
+/* Also adjust the card padding to be more compact */
+.card.skill-card {
+  padding: 0.75rem; /* Reduced padding for skill cards */
+}
+
+/* Make the skill heading bigger */
+.skill-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Increase the icon size */r screens */
+.skill-icon {
+  font-size: 1.8rem; /* Increased from 1.4rem */
+  margin-bottom: 0.75rem; /* Slightly increased margin */   flex-direction: column;
+  text-align: center;  
+  color: #4a9bff;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .skills-container {    flex-direction: column;  }    .skill-group {    flex: 1 1 100%;
+  }
+}
+
+/* Enhanced highlight effect with subtle glow */
+.highlight {
+  color: #FFFF00; /* Neon yellow */
+  text-shadow: 0 0 3px rgba(255, 255, 0, 0.7);
+  font-weight: 500;
+  display: inline; /* Ensure inline display */
+  white-space: nowrap; /* Prevent breaking */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+}
+
+/* Apply special handling for intro text */
+.intro h1 .highlight,
+.intro p .highlight,
+p .highlight {
+  margin-right: -0.1em; /* Negative margin to pull text closer */
+  position: relative; /* For precise positioning */
+}
+
+/* Ensure skill list items don't have gaps */
+.skill-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+  padding: 0;
+  white-space: nowrap; /* Keep list items on one line */
+}
+
+.skill-list li span {
+  display: inline;
 }
